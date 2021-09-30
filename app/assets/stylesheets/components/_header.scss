@@ -1,0 +1,35 @@
+header {
+  text-align: center;
+  color: $lite_grey;
+  margin-top: 200px;
+  height: 100vh;
+  img {
+    height: 240px;
+    width: 240px;
+    margin: 0px auto;
+  }
+  h1 {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 24px;
+  }
+}
+
+.header-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    height: 4px;
+    width: 112px;
+    background: $white;
+    border-radius: 2px;
+    margin: 0px 16px;
+  }
+  i {
+    color: $white;
+    font-size: 35px;
+  }
+}
