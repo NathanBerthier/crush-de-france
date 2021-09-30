@@ -1,0 +1,12 @@
+footer {
+  background-color: $black;
+  padding: 29px 0px;
+  display: flex;
+  justify-content: center;
+  span {
+    margin: 0px auto;
+    color: $lite_grey;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
