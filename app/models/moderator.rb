@@ -1,4 +1,4 @@
 class Moderator < ApplicationRecord
-  belong_to :user
-  belong_to :city
+  belongs_to :user
+  belongs_to :city
 end
