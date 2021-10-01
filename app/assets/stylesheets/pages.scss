@@ -1,0 +1,18 @@
+.home-content {
+  background: $grey_blue;
+  color: $white;
+  text-align: center;
+  padding: 96px 0px;
+  h2 {
+    font-size: 48px;
+    margin: 0px;
+    margin-bottom: 35px;
+  }
+  #line {
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background: $lite_grey;
+    opacity: 20%;
+  }
+}

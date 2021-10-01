@@ -2,7 +2,7 @@ header {
   text-align: center;
   color: $lite_grey;
   margin-top: 200px;
-  height: 100vh;
+  height: calc(100vh - 200px);
   img {
     height: 240px;
     width: 240px;
