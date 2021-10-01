@@ -9,10 +9,11 @@
 .cities-card {
   background: $grey_blue;
   border-radius: 8px;
+  margin: 0px auto;
   margin-bottom: 30px;
   padding: 15px;
-  height: 300px;
   display: flex;
+  width: 750px;
 }
 
 .red {
@@ -24,7 +25,7 @@
 }
 
 .short-name {
-  color: $lite_grey;
+  color: $white;
   writing-mode: vertical-rl;
   text-orientation: upright;
   margin: 0px;
@@ -44,5 +45,26 @@
   color: $white;
   h2 {
     font-weight: 100;
+  }
+}
+
+.card-info {
+  display: flex;
+  align-items: center;
+  h2 {
+    color: $lite_grey;
+  }
+  h3 {
+    margin: 0px;
+    margin-left: 10px;
+    font-size: 24px;
+  }
+  a {
+    padding: 10px 15px;
+    color: white;
+    background: $yellow;
+    border-radius: 8px;
+    margin-left: 20px;
+    font-weight: 600;
   }
 }

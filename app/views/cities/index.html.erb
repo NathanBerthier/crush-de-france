@@ -18,13 +18,45 @@
       </div>
     </header>
     <% @my_cities.each do |city| %>
-      <div class='<%= DateTime.now >= city.subscription_end ? "cities-card red" : "cities-card green" %>'>
+      <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
         <h2 class='short-name'><%= city.short_name.upcase %></h2>
         <div class='card-line'></div>
         <div class='card-content'>
-          <h2>Votre abonement expire le <%= city.subscription_end.strftime("%d/%m/%y") %></h2>
-          <h2>Date du dernier upload: <%= city.lastupload_date.strftime("%d/%m/%y - %H:%M") %></h2>
-          <h2>Log du dernier upload: <%= city.lastupload_log %></h2>
+
+          <div class='card-info'>
+            <h2>Votre abonement expire le: </h2>
+            <h3><%= city.subscription_end.strftime("%d/%m/%y") %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Date du dernier upload: </h2>
+            <h3><%= city.lastupload_date.strftime("%d/%m/%y - %H:%M") %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Log du dernier upload: </h2>
+            <h3><%= city.lastupload_log %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Nombre de moderateur: </h2>
+            <h3>5</h3>
+            <%= link_to 'Gérer les modérateurs', root_path %>
+          </div>
+
+          <div class='card-info'>
+            <h2>Nombre de poste en attente: </h2>
+            <h3>12</h3>
+            <% if city.sub? %>
+              <%= link_to 'Valider les postes', root_path %>
+            <% end %>
+          </div>
+
+          <div class='card-info'>
+            <h2>Lien vers la création de postes: </h2>
+            <%= link_to 'Voir', root_path %>
+          </div>
+
         </div>
       </div>
     <% end %>
