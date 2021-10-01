@@ -9,4 +9,8 @@ class City < ApplicationRecord
   def sub?
     DateTime.now <= self.subscription_end
   end
+
+  def num_post
+    Post.where(city: self, status: 'toto').count
+  end
 end

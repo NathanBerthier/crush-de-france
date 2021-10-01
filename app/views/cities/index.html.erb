@@ -46,7 +46,7 @@
 
           <div class='card-info'>
             <h2>Nombre de poste en attente: </h2>
-            <h3>12</h3>
+            <h3><%= city.num_post %></h3>
             <% if city.sub? %>
               <%= link_to 'Valider les postes', root_path %>
             <% end %>

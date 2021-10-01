@@ -1,0 +1,51 @@
+.post-form {
+  text-align: center;
+  margin-top: 80px;
+  color: $white;
+  h2 {
+    font-size: 38px;
+  }
+  label {
+    color: $lite_grey;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .post-input {
+    margin-bottom: 16px;
+  }
+  input {
+    height: 40px;
+    width: 80%;
+    border-style: none;
+    border-radius: 8px;
+    background: $grey;
+    color: $white;
+    padding: 0px 8px;
+    text-align: center;
+    &:focus-visible {
+      outline: 1px $yellow solid;
+    }
+  }
+  textarea {
+    height: 400px;
+    width: 80%;
+    border-style: none;
+    border-radius: 8px;
+    background: $grey;
+    color: $white;
+    padding: 10px;
+    &:focus-visible {
+      outline: 1px $yellow solid;
+    }
+  }
+}
+
+.actions input {
+  margin-top: 10px;
+  width: 82%;
+  background: $yellow;
+  font-size: 18px;
+  &:hover {
+    cursor: pointer;
+  }
+}

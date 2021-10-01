@@ -13,7 +13,21 @@
       </div>
     </header>
     <div class='post-form'>
-
+      <h2>CRÉE TON POSTE</h2>
+      <div class='post-line'></div>
+      <%= form_for([@city, @post], url: new_post_path, method: :post) do |f| %>
+        <div class='post-input'>
+          <%= f.label 'Pseudo' %>
+          <%= f.text_field :username %>
+        </div>
+        <div class='post-input'>
+          <%= f.label 'Message' %>
+          <%= f.text_area :message %>
+        </div>
+        <div class='actions'>
+          <%= f.submit "Envoyer" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
