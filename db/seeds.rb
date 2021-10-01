@@ -10,7 +10,7 @@ City.destroy_all
 User.destroy_all
 puts 'Create user and cities...'
 user = User.create!(username: 'Nathan', email: 'nathan.berth69@gmail.com', password: '123456')
-City.create!(name: 'Bourg en Bresse', short_name: 'Bourg', subscription_end: (DateTime.now + 3), lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
-City.create!(name: 'Lyon', short_name: 'Lyon', subscription_end: DateTime.now, lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
-City.create!(name: 'Paris', short_name: 'Paris', subscription_end: (DateTime.now + 10), lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
+City.create!(name: 'Bourg en Bresse', short_name: 'bourg', subscription_end: (DateTime.now + 3), lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
+City.create!(name: 'Lyon', short_name: 'lyon', subscription_end: DateTime.now, lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
+City.create!(name: 'Paris', short_name: 'paris', subscription_end: (DateTime.now + 10), lastupload_log: 'Prout', lastupload_date: DateTime.now, user: user)
 puts 'Finish'
