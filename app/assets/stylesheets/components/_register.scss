@@ -1,0 +1,59 @@
+.register {
+  margin-top: 200px;
+  text-align: center;
+  height: calc(100vh - 274px);
+  color: $lite_grey;
+  ul {
+    list-style: none;
+    padding: 0px;
+    color: $red;
+  }
+  h2 {
+    font-size: 32px;
+    margin-bottom: 0px;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  input {
+    height: 40px;
+    width: 355px;
+    border-style: none;
+    border-radius: 8px;
+    background: $grey;
+    color: $white;
+    padding: 0px 8px;
+    &:focus-visible {
+      outline: 1px $yellow solid;
+    }
+  }
+}
+
+.actions input {
+  margin-top: 10px;
+  width: 370px;
+  background: $yellow;
+  font-size: 18px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.register-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a {
+    font-family: 'Lato';
+    margin-left: 5px;
+    color: $yellow;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

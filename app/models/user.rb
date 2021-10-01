@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :citys
   has_many :moderators
+
+  validates :username, presence: true
 end
