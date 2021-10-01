@@ -1,7 +1,32 @@
 <div class='container'>
   <div class='cities-content'>
+    <header>
+      <div class='container'>
+        <h1>ADMINISTRATION</h1>
+        <div class='header-star'>
+          <div></div>
+          <i class="fas fa-star"></i>
+          <div></div>
+        </div>
+        <% if @my_cities.count == 0 %>
+          <p>Vous n'avez aucune ville pour le moment</p>
+        <% elsif @my_cities.count == 1 %>
+          <p>Vous gérez 1 ville</p>
+        <% else %>
+          <p>Vous gérez <%= @my_cities.count %> villes</p>
+        <% end %>
+      </div>
+    </header>
     <% @my_cities.each do |city| %>
-      <h2><%= city.name %></h2>
+      <div class='<%= DateTime.now >= city.subscription_end ? "cities-card red" : "cities-card green" %>'>
+        <h2 class='short-name'><%= city.short_name.upcase %></h2>
+        <div class='card-line'></div>
+        <div class='card-content'>
+          <h2>Votre abonement expire le <%= city.subscription_end.strftime("%d/%m/%y") %></h2>
+          <h2>Date du dernier upload: <%= city.lastupload_date.strftime("%d/%m/%y - %H:%M") %></h2>
+          <h2>Log du dernier upload: <%= city.lastupload_log %></h2>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

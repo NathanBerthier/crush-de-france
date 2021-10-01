@@ -1,3 +1,48 @@
 .cities-content {
   margin-top: 200px;
+  header {
+    height: auto;
+    margin-bottom: 50px;
+  }
+}
+
+.cities-card {
+  background: $grey_blue;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  padding: 15px;
+  height: 300px;
+  display: flex;
+}
+
+.red {
+  outline: 2px $red solid;
+}
+
+.green {
+  outline: 2px green solid;
+}
+
+.short-name {
+  color: $lite_grey;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0px;
+  text-align: center;
+}
+
+.card-line {
+  width: 4px;
+  height: auto;
+  border-radius: 2px;
+  background: $white;
+  margin: 0px 15px;
+  opacity: .7;
+}
+
+.card-content {
+  color: $white;
+  h2 {
+    font-weight: 100;
+  }
 }

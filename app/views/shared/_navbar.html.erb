@@ -6,6 +6,9 @@
         <%= link_to 'NOS SERVICES', '#services' %>
       <% end %>
       <%= link_to 'MA VILLE', cities_path %>
+      <% if user_signed_in? %>
+        <%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %>
+      <% end %>
     </div>
   </div>
 </nav>
