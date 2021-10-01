@@ -1,7 +1,6 @@
 class CitiesController < ApplicationController
   def index
-    @my_cities = City.where(user == current_user)
-    raise
+    @my_cities = City.where(:user == current_user)
   end
 
   def show

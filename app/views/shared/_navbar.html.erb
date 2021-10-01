@@ -2,8 +2,10 @@
   <div class='container'>
     <%= link_to 'CRUSHDEFRANCE', root_path %>
     <div class='nav-link'>
-      <%= link_to 'NOS SERVICES', '#services' %>
-      <%= link_to 'MA VILLE', root_path %>
+      <% if params[:controller] == 'pages' && params[:action] == 'home' %>
+        <%= link_to 'NOS SERVICES', '#services' %>
+      <% end %>
+      <%= link_to 'MA VILLE', cities_path %>
     </div>
   </div>
 </nav>
