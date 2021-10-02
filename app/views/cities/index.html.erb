@@ -1,21 +1,19 @@
 <div class='container'>
   <div class='cities-content'>
     <header>
-      <div class='container'>
-        <h1>ADMINISTRATION</h1>
-        <div class='header-star'>
-          <div></div>
-          <i class="fas fa-star"></i>
-          <div></div>
-        </div>
-        <% if @my_cities.count == 0 %>
-          <p>Vous n'avez aucune ville pour le moment</p>
-        <% elsif @my_cities.count == 1 %>
-          <p>Vous gérez 1 ville</p>
-        <% else %>
-          <p>Vous gérez <%= @my_cities.count %> villes</p>
-        <% end %>
+      <h1>ADMINISTRATION</h1>
+      <div class='header-star'>
+        <div></div>
+        <i class="fas fa-star"></i>
+        <div></div>
       </div>
+      <% if @my_cities.count == 0 %>
+        <p>Vous n'avez aucune ville pour le moment</p>
+      <% elsif @my_cities.count == 1 %>
+        <p>Vous gérez 1 ville</p>
+      <% else %>
+        <p>Vous gérez <%= @my_cities.count %> villes</p>
+      <% end %>
     </header>
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
@@ -48,7 +46,7 @@
             <h2>Nombre de poste en attente: </h2>
             <h3><%= city.num_post %></h3>
             <% if city.sub? %>
-              <%= link_to 'Valider les postes', root_path %>
+              <%= link_to 'Valider les postes', city_posts_path(city) %>
             <% end %>
           </div>
 

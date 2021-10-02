@@ -11,6 +11,6 @@ class City < ApplicationRecord
   end
 
   def num_post
-    Post.where(city: self, status: 'toto').count
+    Post.where(city: self, status: 'att').count
   end
 end

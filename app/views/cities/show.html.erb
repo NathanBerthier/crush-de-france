@@ -1,16 +1,14 @@
 <div class='container'>
   <div class='cities-content'>
     <header>
-      <div class='container'>
-        <%= image_tag("icon.png", :alt => "icon crush de france") %>
-        <h1>CRUSH DE <%= @city.short_name.upcase %></h1>
-        <div class='header-star'>
-          <div></div>
-          <i class="fas fa-star"></i>
-          <div></div>
-        </div>
-        <p>Crée votre poste très simplement</p>
+      <%= image_tag("icon.png", :alt => "icon crush de france") %>
+      <h1>CRUSH DE <%= @city.short_name.upcase %></h1>
+      <div class='header-star'>
+        <div></div>
+        <i class="fas fa-star"></i>
+        <div></div>
       </div>
+      <p>Crée votre poste très simplement</p>
     </header>
     <div class='post-form'>
       <h2>CRÉE TON POSTE</h2>
@@ -24,7 +22,7 @@
           <%= f.label 'Message' %>
           <%= f.text_area :message %>
         </div>
-        <div class='actions'>
+        <div class='actions-post'>
           <%= f.submit "Envoyer" %>
         </div>
       <% end %>

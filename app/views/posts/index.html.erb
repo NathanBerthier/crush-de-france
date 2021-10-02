@@ -1,0 +1,13 @@
+<div class='container'>
+  <div class='post-content'>
+    <h2>POSTES EN ATTENTES</h2>
+    <div class='post-value'>
+      <h3>Pseudo: <%= @post.username.capitalize %></h3>
+      <p><%= @post.message %></p>
+    </div>
+    <div class='post-validation'>
+      <%= link_to 'Valider', city_post_path(params[:city_id], @post), method: :patch, class: 'add' %>
+      <%= link_to 'Supprimer', city_post_path(params[:city_id], @post), method: :delete, class: 'remove' %>
+    </div>
+  </div>
+</div>
