@@ -19,7 +19,7 @@
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
         <div class='card-delete'>
-          <%= link_to city_path(city), method: :delete, class: 'white-link' do %>
+          <%= link_to edit_city_path(city), class: 'white-link' do %>
             <i class="fas fa-sliders-h"></i>
           <% end %>
           <%= link_to city_path(city), method: :delete, class: 'red-link' do %>

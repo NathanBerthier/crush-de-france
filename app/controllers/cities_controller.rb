@@ -33,6 +33,24 @@ class CitiesController < ApplicationController
     end
   end
 
+  def edit
+    @city = City.find(params[:id])
+  end
+
+  def update # rubocop:disable Metrics/MethodLength
+    @city = City.find(params[:id])
+    data = city_params
+    time = "#{data['upload_time(4i)']}:#{data['upload_time(5i)']}"
+    @city.update(
+      name: data[:name],
+      short_name: data[:short_name],
+      upload_time: time,
+      lastupload_log: 'Update city',
+      lastupload_date: DateTime.current
+    )
+    redirect_to cities_path
+  end
+
   def destroy
     city = City.find(params[:id])
     city.destroy
