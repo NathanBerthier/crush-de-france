@@ -14,6 +14,7 @@
       <% else %>
         <p>Vous gérez <%= @my_cities.count %> villes</p>
       <% end %>
+      <%= link_to 'Créer une novelle ville', new_city_path, class: 'city-btn' %>
     </header>
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>

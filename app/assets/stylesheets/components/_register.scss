@@ -28,6 +28,18 @@
       outline: 1px $yellow solid;
     }
   }
+  select {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    border-style: none;
+    border-radius: 8px;
+    background: $grey;
+    color: $white;
+    &:focus-visible {
+      outline: 1px $yellow solid;
+    }
+  }
 }
 
 .actions input {
