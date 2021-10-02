@@ -31,7 +31,7 @@ module CrushDeFrance
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
+    config.time_zone = 'Paris'
     config.active_record.default_timezone = :local
     config.active_record.time_zone_aware_attributes = true
   end

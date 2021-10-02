@@ -4,7 +4,7 @@ class CreateCities < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :short_name
       t.string :description
-      t.date :upload_time
+      t.time :upload_time
       t.date :subscription_end
       t.references :user, foreign_key: true
 

@@ -6,6 +6,8 @@ class City < ApplicationRecord
 
   has_one :instagram_acount
 
+  validates :name, :short_name, presence: true
+
   def sub?
     DateTime.now <= self.subscription_end
   end

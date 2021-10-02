@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2021_10_02_222109) do
     t.string "name"
     t.string "short_name"
     t.string "description"
-    t.string "upload_time"
+    t.time "upload_time"
     t.date "subscription_end"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
