@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   def index
-    @post = Post.where(city: params[:city_id], status: 'att')[0]
+    city = City.find(params[:city_id])
+    if city.sub?
+      @post = Post.where(city: params[:city_id], status: 'att')[0]
+    end
     unless @post
       redirect_to cities_path
     end
