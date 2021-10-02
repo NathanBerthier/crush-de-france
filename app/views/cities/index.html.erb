@@ -18,6 +18,14 @@
     </header>
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
+        <div class='card-delete'>
+          <%= link_to city_path(city), method: :delete, class: 'white-link' do %>
+            <i class="fas fa-sliders-h"></i>
+          <% end %>
+          <%= link_to city_path(city), method: :delete, class: 'red-link' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
         <h2 class='short-name'><%= city.short_name.upcase %></h2>
         <div class='card-line'></div>
         <div class='card-content'>

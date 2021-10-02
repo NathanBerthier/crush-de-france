@@ -14,7 +14,7 @@ class CitiesController < ApplicationController
     @city = City.new
   end
 
-  def create
+  def create # rubocop:disable Metrics/MethodLength
     data = city_params
     time = "#{data['upload_time(4i)']}:#{data['upload_time(5i)']}"
     @city = City.new(
@@ -31,6 +31,12 @@ class CitiesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    city = City.find(params[:id])
+    city.destroy
+    redirect_to cities_path
   end
 
   private
