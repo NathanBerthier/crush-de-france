@@ -12,6 +12,12 @@ class PostsController < ApplicationController
     redirect_to city_posts_path(params[:city_id])
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to city_posts_path(params[:city_id])
+  end
+
   def create
     city = City.where(short_name: params[:city_name])[0]
     @post = Post.new(posts_params)
