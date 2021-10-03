@@ -3,6 +3,7 @@
   <p>Complétez les informations pour créer votre ville.</p>
 
   <%= form_for(@city) do |f| %>
+    <%= render "devise/shared/error_messages", resource: @city %>
     <div class='field'>
       <%= f.label 'Nom de la ville' %>
       <%= f.text_field :name, placeholder: 'Bourg en Bresse' %>
