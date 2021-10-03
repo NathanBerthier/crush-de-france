@@ -1,23 +1,18 @@
-<div class='register'>
-  <h2>Ajouter une nouvelle ville</h2>
-  <p>Complétez les informations pour créer votre ville.</p>
-
-  <%= form_for(@city) do |f| %>
-    <%= render "devise/shared/error_messages", resource: @city %>
-    <div class='field'>
-      <%= f.label 'Nom de la ville' %>
-      <%= f.text_field :name, placeholder: 'Bourg en Bresse' %>
-    </div>
-    <div class='field'>
-      <%= f.label 'Nom court' %>
-      <%= f.text_field :short_name, placeholder: 'Bourg' %>
-    </div>
-    <div class='field'>
-      <%= f.label "Heure d'upload" %>
-      <%= f.time_select :upload_time %>
-    </div>
-    <div class='actions'>
-      <%= f.submit "Enregistrer" %>
-    </div>
-  <% end %>
-</div>
+<%= form_for(@city) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @city %>
+  <div class='field'>
+    <%= f.label 'Nom de la ville' %>
+    <%= f.text_field :name, placeholder: 'Bourg en Bresse' %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Nom court' %>
+    <%= f.text_field :short_name, placeholder: 'Bourg' %>
+  </div>
+  <div class='field'>
+    <%= f.label "Heure d'upload" %>
+    <%= f.time_select :upload_time %>
+  </div>
+  <div class='actions'>
+    <%= f.submit "Enregistrer" %>
+  </div>
+<% end %>
