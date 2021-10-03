@@ -1,0 +1,14 @@
+<%= form_for([@city, @insta]) do |f| %>
+  <%= render "devise/shared/error_messages", resource: @city %>
+  <div class='field'>
+    <%= f.label 'Identifiant' %>
+    <%= f.text_field :username %>
+  </div>
+  <div class='field'>
+    <%= f.label 'Mot de passe' %>
+    <%= f.password_field :password %>
+  </div>
+  <div class='actions'>
+    <%= f.submit "Enregistrer" %>
+  </div>
+<% end %>

@@ -19,6 +19,9 @@
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
         <div class='card-delete'>
+          <%= link_to new_city_insta_acount_path(city), class: 'white-link' do %>
+            <i class="fab fa-instagram"></i>
+          <% end %>
           <%= link_to edit_city_path(city), class: 'white-link' do %>
             <i class="fas fa-sliders-h"></i>
           <% end %>

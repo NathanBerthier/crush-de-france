@@ -18,8 +18,8 @@ class CitiesController < ApplicationController
     data = city_params
     time = Time.parse("#{data['upload_time(4i)']}:#{data['upload_time(5i)']}")
     @city = City.new(
-      name: data[:name],
-      short_name: data[:short_name],
+      name: data[:name].downcase,
+      short_name: data[:short_name].downcase,
       upload_time: time,
       subscription_end: (DateTime.current + 5),
       user: current_user,
@@ -42,8 +42,8 @@ class CitiesController < ApplicationController
     data = city_params
     time = Time.parse("#{data['upload_time(4i)']}:#{data['upload_time(5i)']}")
     @city.update(
-      name: data[:name],
-      short_name: data[:short_name],
+      name: data[:name].downcase,
+      short_name: data[:short_name].downcase,
       upload_time: time,
       lastupload_log: 'Update city',
       lastupload_date: DateTime.current
