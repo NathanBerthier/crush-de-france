@@ -15,11 +15,14 @@ class InstaAcountsController < ApplicationController
   end
 
   def edit
-
+    @insta = InstaAcount.find(params[:id])
+    @city = City.find(params[:city_id])
   end
 
   def update
-
+    @insta = InstaAcount.find(params[:id])
+    @insta.update(insta_acount_params)
+    redirect_to cities_path
   end
 
   private

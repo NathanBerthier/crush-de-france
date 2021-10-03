@@ -4,7 +4,7 @@ class City < ApplicationRecord
   has_many :moderators
   has_many :posts, dependent: :delete_all
 
-  has_one :instagram_acount
+  has_one :insta_acount
 
   validates :name, :short_name, presence: true, uniqueness: true
 
