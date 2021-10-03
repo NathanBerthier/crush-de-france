@@ -1,10 +1,10 @@
 class City < ApplicationRecord
   belongs_to :user
 
-  has_many :moderators
+  has_many :moderators, dependent: :delete_all
   has_many :posts, dependent: :delete_all
 
-  has_one :insta_acount
+  has_one :insta_acount, dependent: :delete
 
   validates :name, :short_name, presence: true, uniqueness: true
 
