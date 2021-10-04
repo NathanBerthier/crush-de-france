@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def moderated_cities
-    toto = self.moderators.map do |moderator|
+    self.moderators.map do |moderator|
       moderator.city
     end
   end
