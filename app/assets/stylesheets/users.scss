@@ -1,0 +1,63 @@
+.user-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 20px;
+  margin-top: 30px;
+}
+
+.user-card {
+  background: $grey_blue;
+  color: $white;
+  border-radius: 8px;
+  width: 80%;
+  text-align: center;
+  padding: 10px;
+  place-self: center;
+  h2 {
+    margin-top: 0px;
+  }
+  a {
+    padding: 10px 15px;
+    color: white;
+    background: $yellow;
+    border-radius: 8px;
+    font-weight: 600;
+    display: block;
+  }
+  .user-delete {
+    background: $red;
+  }
+}
+
+.user-form {
+  text-align: center;
+}
+
+.user-register {
+  text-align: center;
+  color: $lite_grey;
+  input {
+    height: 40px;
+    width: 355px;
+    border-style: none;
+    border-radius: 8px;
+    background: $grey;
+    color: $white;
+    padding: 0px 8px;
+    text-align: center;
+    &:focus-visible {
+      outline: 1px $yellow solid;
+    }
+  }
+}
+
+.user-actions input {
+  margin-top: 10px;
+  width: 370px;
+  background: $yellow;
+  font-size: 18px;
+  &:hover {
+    cursor: pointer;
+  }
+}

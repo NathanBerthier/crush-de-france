@@ -1,0 +1,49 @@
+<div class='container'>
+  <div class='cities-content'>
+    <header>
+      <h1>MODERATEUR</h1>
+      <div class='header-star'>
+        <div></div>
+        <i class="fas fa-star"></i>
+        <div></div>
+      </div>
+      <p>Gérez les modérateurs de <%= @city.short_name.capitalize %></p>
+    </header>
+    <div class='user-register'>
+      <%= form_tag  city_users_path(@city), method: :get, class: 'user-form' do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Trouver un modérateur"
+        %>
+        <div class="user-actions">
+        <%= submit_tag "Trouver", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+    <% if @users %>
+      <div class='user-grid'>
+        <% @users.each do |user| %>
+          <% if !user.prop_city(@city) %>
+            <% if !user.alredy_moderator(@city) %>
+              <div class='user-card'>
+                <h2><%= user.username.capitalize %></h2>
+                <%= link_to 'Ajouter', city_user_moderators_path(@city, user), method: :post %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @moderators %>
+      <div class='user-grid'>
+        <% @moderators.each do |moderator| %>
+            <div class='user-card'>
+              <h2><%= moderator.user.username.capitalize %></h2>
+              <%= link_to 'Suprimer', city_user_moderator_path(@city, moderator.user, moderator), method: :delete, class: 'user-delete' %>
+            </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
