@@ -85,10 +85,12 @@
             <%= link_to 'Voir', show_city_path(city.short_name.downcase) %>
           </div>
 
-          <div class='card-info'>
-            <h2>Prolonger l'abonement : </h2>
-            <%= link_to 'Prolonger', subscription_path(city) %>
-          </div>
+          <% if (city.subscription_end - DateTime.current) <= 30 %>
+            <div class='card-info'>
+              <h2>Prolonger l'abonement : </h2>
+              <%= link_to 'Prolonger', subscription_path(city) %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

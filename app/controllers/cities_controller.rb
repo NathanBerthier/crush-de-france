@@ -64,7 +64,7 @@ class CitiesController < ApplicationController
 
   def update_subscription
     city = City.find(params[:id])
-    city.update(subscription: params[:sub_id])
+    city.update(subscription: params[:sub_id], subscription_end: (DateTime.current + 365))
     redirect_to cities_path
   end
 

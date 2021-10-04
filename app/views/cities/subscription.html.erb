@@ -1,8 +1,7 @@
-<script src="https://www.paypal.com/sdk/js?client-id=AcdltC0E2f4h_DOj--kk9BQ8s3RCb5QCYMRPcLQsMCC5EV3yVOYPQxI86e-7Q-G8mCCJ5x4qxWvvxKTe&vault=true&intent=subscription"></script>
 <div class='container'>
   <div class='cities-content'>
     <header>
-      <h1>ABONEMENT</h1>
+      <h1>ABONNEMENT</h1>
       <div class='header-star'>
         <div></div>
         <i class="fas fa-star"></i>
@@ -10,14 +9,19 @@
       </div>
       <p>5€/mois sans engagement</p>
     </header>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcdltC0E2f4h_DOj--kk9BQ8s3RCb5QCYMRPcLQsMCC5EV3yVOYPQxI86e-7Q-G8mCCJ5x4qxWvvxKTe&vault=true&intent=subscription"></script>
     <div class='moula' id="paypal-button-container"></div>
-    <script>
-      paypal.Buttons({
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          'plan_id': 'P-4UD80709042926807MFNR4XA'
-        });
-      },
+  </div>
+</div>
+
+<script>
+  document.addEventListener('turbolinks:load', () => {
+    paypal.Buttons({
+    createSubscription: function(data, actions) {
+      return actions.subscription.create({
+        'plan_id': 'P-4UD80709042926807MFNR4XA'
+      });
+    },
       onApprove: function(data, actions) {
         Rails.ajax({
           type: "PATCH",
@@ -25,7 +29,5 @@
         });
       }
     }).render('#paypal-button-container');
-  </script>
-  </div>
-</div>
-<%=  %>
+  });
+</script>

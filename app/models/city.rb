@@ -9,7 +9,7 @@ class City < ApplicationRecord
   validates :name, :short_name, presence: true, uniqueness: true
 
   def sub?
-    DateTime.now <= self.subscription_end
+    DateTime.current <= self.subscription_end
   end
 
   def num_post
