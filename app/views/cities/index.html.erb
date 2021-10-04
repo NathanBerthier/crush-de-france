@@ -18,6 +18,11 @@
     </header>
     <% @my_cities.each do |city| %>
       <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
+        <% if !city.insta_acount %>
+          <div class='insta-acount moove'>
+            <p>Ajouter un compte instagram ➡️</p>
+          </div>
+        <% end %>
         <div class='card-delete'>
           <% if city.insta_acount %>
             <%= link_to edit_city_insta_acount_path(city, city.insta_acount), class: 'white-link' do %>
@@ -42,8 +47,13 @@
         <div class='card-content'>
 
           <div class='card-info'>
-            <h2>Votre abonement expire le: </h2>
-            <h3><%= city.subscription_end.strftime("%d/%m/%y") %></h3>
+            <% if city.sub? %>
+              <h2>Votre abonement expire le: </h2>
+              <h3><%= city.subscription_end.strftime("%d/%m/%y") %></h3>
+            <% else %>
+              <h2>Votre abonement à expiré le: </h2>
+              <h3><%= city.subscription_end.strftime("%d/%m/%y") %></h3>
+            <% end %>
           </div>
 
           <div class='card-info'>

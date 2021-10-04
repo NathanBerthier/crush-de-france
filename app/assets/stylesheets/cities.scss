@@ -98,3 +98,20 @@
     color: rgb(150, 150, 150);
   }
 }
+
+.insta-acount {
+  position: absolute;
+  top: 13px;
+  color: $white;
+  padding: 5px 10px;
+  background: $red;
+  z-index: 10;
+  border-radius: 8px;
+  transition: 300ms right ease;
+  animation: 500ms linear 0s infinite alternate move_insta;
+  p {
+    margin: 0px;
+  }
+}
+
+@keyframes move_insta { from { right:140px; } to { right:160px; }  }
