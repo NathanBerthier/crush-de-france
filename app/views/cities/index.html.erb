@@ -78,5 +78,43 @@
         </div>
       </div>
     <% end %>
+
+    <% @moderated_cities.each do |city| %>
+      <div class='<%= city.sub? ? "cities-card green" : "cities-card red" %>'>
+        <h2 class='short-name'><%= city.short_name.upcase %></h2>
+        <div class='card-line'></div>
+        <div class='card-content'>
+
+          <div class='card-info'>
+            <h2>Votre abonement expire le: </h2>
+            <h3><%= city.subscription_end.strftime("%d/%m/%y") %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Date du dernier upload: </h2>
+            <h3><%= city.lastupload_date.strftime("%d/%m/%y - %H:%M") %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Log du dernier upload: </h2>
+            <h3><%= city.lastupload_log %></h3>
+          </div>
+
+          <div class='card-info'>
+            <h2>Nombre de poste en attente: </h2>
+            <h3><%= city.num_post %></h3>
+            <% if city.sub? %>
+              <%= link_to 'Valider les postes', city_posts_path(city) %>
+            <% end %>
+          </div>
+
+          <div class='card-info'>
+            <h2>Lien vers la création de postes: </h2>
+            <%= link_to 'Voir', show_city_path(city.short_name.downcase) %>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

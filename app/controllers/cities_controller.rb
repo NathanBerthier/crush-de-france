@@ -2,7 +2,8 @@ class CitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @my_cities = City.where(user: current_user)
+    @my_cities = current_user.cities
+    @moderated_cities = current_user.moderated_cities
   end
 
   def show

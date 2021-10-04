@@ -21,4 +21,10 @@ class User < ApplicationRecord
   def prop_city(city)
     city.user == self
   end
+
+  def moderated_cities
+    toto = self.moderators.map do |moderator|
+      moderator.city
+    end
+  end
 end
