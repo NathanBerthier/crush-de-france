@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
   get ':city_name', to: 'cities#show', as: :show_city
   post ':city_name/post', to: 'posts#create', as: :new_post
+  patch '/cities/:id/subsciption/:sub_id', to: 'cities#update_subscription', as: :update_subscription
+  get '/cities/:id/subsciption', to: 'cities#subscription', as: :subscription
 end

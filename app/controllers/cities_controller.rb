@@ -58,6 +58,16 @@ class CitiesController < ApplicationController
     redirect_to cities_path
   end
 
+  def subscription
+    @city = City.find(params[:id])
+  end
+
+  def update_subscription
+    city = City.find(params[:id])
+    city.update(subscription: params[:sub_id])
+    redirect_to cities_path
+  end
+
   private
 
   def city_params

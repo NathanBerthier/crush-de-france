@@ -927,6 +927,13 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
+"@paypal/paypal-js@^4.0.12":
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@paypal/paypal-js/-/paypal-js-4.0.12.tgz#f63099275f9c980b8e93d706e1b5a9b0d9a939e3"
+  integrity sha512-8u7Ftl6jl7nGw/zr9icGjnXWbDrx6n2a2qmNv5Crgm2lCe5l56oHtvOSI8B54JQbUAL8WgX25Xk8mOIYerrQ7Q==
+  dependencies:
+    promise-polyfill "^8.2.0"
+
 "@rails/actioncable@^6.0.0":
   version "6.1.4"
   resolved "https://registry.npmjs.org/@rails/actioncable/-/actioncable-6.1.4.tgz"
@@ -6094,6 +6101,11 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+
+promise-polyfill@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.2.0.tgz#367394726da7561457aba2133c9ceefbd6267da0"
+  integrity sha512-k/TC0mIcPVF6yHhUvwAp7cvL6I2fFV7TzF1DuGPI8mBh4QQazf36xCKEHKTZKRysEoTQoQdKyP25J8MPJp7j5g==
 
 proxy-addr@~2.0.5:
   version "2.0.7"

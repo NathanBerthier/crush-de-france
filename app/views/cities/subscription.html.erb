@@ -1,0 +1,31 @@
+<script src="https://www.paypal.com/sdk/js?client-id=AcdltC0E2f4h_DOj--kk9BQ8s3RCb5QCYMRPcLQsMCC5EV3yVOYPQxI86e-7Q-G8mCCJ5x4qxWvvxKTe&vault=true&intent=subscription"></script>
+<div class='container'>
+  <div class='cities-content'>
+    <header>
+      <h1>ABONEMENT</h1>
+      <div class='header-star'>
+        <div></div>
+        <i class="fas fa-star"></i>
+        <div></div>
+      </div>
+      <p>5€/mois sans engagement</p>
+    </header>
+    <div class='moula' id="paypal-button-container"></div>
+    <script>
+      paypal.Buttons({
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          'plan_id': 'P-4UD80709042926807MFNR4XA'
+        });
+      },
+      onApprove: function(data, actions) {
+        Rails.ajax({
+          type: "PATCH",
+          url: `/cities/<%= @city.id %>/subsciption/${data.subscriptionID}`,
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
+  </div>
+</div>
+<%=  %>
