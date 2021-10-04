@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :cities do
     resources :posts, only: %i[index update destroy]
     resources :insta_acounts, only: %i[new create edit update]
+    resources :moderators, only: %i[new create destroy]
   end
   get ':city_name', to: 'cities#show', as: :show_city
   post ':city_name/post', to: 'posts#create', as: :new_post

@@ -10,7 +10,7 @@
   </div>
   <div class='field'>
     <%= f.label "Heure d'upload" %>
-    <%= f.time_select :upload_time %>
+    <%= f.select :upload_time, (0..23).to_a %>
   </div>
   <div class='actions'>
     <%= f.submit "Enregistrer" %>
