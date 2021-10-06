@@ -21,6 +21,7 @@
     color: $lite_grey;
     margin-top: 0px;
     margin-bottom: 30px;
+    text-align: center;
   }
 }
 
@@ -42,6 +43,9 @@
     }
     h4 {
       font-size: 12px;
+    }
+    p {
+      width: 99%;
     }
   }
   .card-left {
