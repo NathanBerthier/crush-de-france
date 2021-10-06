@@ -1,14 +1,12 @@
 .card {
   display: flex;
-  margin: 0px auto;
+  margin: 0px 150px;
   margin-top: 120px;
   background: $black;
   border-radius: 8px;
-  width: 845px;
   box-shadow: 0 0 15px rgba(0, 0, 0, .4);
   img {
     height: 350px;
-    border-radius: 8px 0px 0px 8px;
   }
   .card-content {
     padding: 10px 50px;
@@ -23,6 +21,31 @@
     color: $lite_grey;
     margin-top: 0px;
     margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 768px) {
+  .card {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+    .card-content {
+      padding: 20px 5px;
+    }
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+  .card-left {
+    img {
+      border-radius: 8px 8px 0px 0px !important;
+    }
+  }
+  .card-right {
+    img {
+      border-radius: 0px 0px 8px 8px !important;
+    }
   }
 }
 

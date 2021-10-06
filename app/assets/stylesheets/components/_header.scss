@@ -33,3 +33,14 @@ header {
     font-size: 35px;
   }
 }
+
+@media(max-width: 768px) {
+  header {
+    margin-top: 150px;
+    height: calc(100vh - 150px);
+    h1 {
+      font-size: 44px;
+      margin-bottom: 24px;
+    }
+  }
+}

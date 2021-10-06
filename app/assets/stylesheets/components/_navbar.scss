@@ -26,3 +26,11 @@ nav {
     color: $yellow;
   }
 }
+
+@media(max-width: 768px) {
+  nav {
+    a {
+      font-size: 18px;
+    }
+  }
+}
