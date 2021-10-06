@@ -98,6 +98,7 @@
       </div>
 
       <div class='<%= city.sub? ? "cities-mobile-card green" : "cities-mobile-card red" %>'>
+        <h2><%= city.short_name.upcase %></h2>
         <div class='card-info mobile-grid'>
           <h2>Poste en attente: </h2>
           <h3><%= city.num_post %></h3>
@@ -146,8 +147,9 @@
       </div>
 
       <div class='<%= city.sub? ? "cities-mobile-card green" : "cities-mobile-card red" %>'>
-        <div class='card-info'>
-          <h2>Nombre de poste en attente: </h2>
+        <h2><%= city.short_name.upcase %></h2>
+        <div class='card-info mobile-grid'>
+          <h2>Poste en attente: </h2>
           <h3><%= city.num_post %></h3>
           <% if city.sub? %>
             <%= link_to 'Valider les postes', city_posts_path(city) %>
