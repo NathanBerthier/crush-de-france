@@ -1,7 +1,21 @@
 <nav>
   <div class='container'>
-    <%= link_to 'CRUSHDEFRANCE', root_path %>
-    <div class='nav-link'>
+    <div class='nav-head'>
+      <%= link_to 'CRUSHDEFRANCE', root_path %>
+      <div class='nav-link'>
+        <% if params[:controller] == 'pages' && params[:action] == 'home' %>
+          <%= link_to 'NOS SERVICES', '#services' %>
+        <% end %>
+        <%= link_to 'MA VILLE', cities_path %>
+        <% if user_signed_in? %>
+          <%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %>
+        <% end %>
+      </div>
+      <div class='nav-burger'>
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <div class='burger-link'>
       <% if params[:controller] == 'pages' && params[:action] == 'home' %>
         <%= link_to 'NOS SERVICES', '#services' %>
       <% end %>

@@ -5,7 +5,7 @@ nav {
   top: 0px;
   width: 100%;
   z-index: 1000;
-  .container {
+  .nav-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,6 +14,20 @@ nav {
     color: $lite_grey;
     font-size: 28px;
     font-weight: 700;
+  }
+}
+
+.burger-active {
+  display: block !important;
+}
+
+.burger-link {
+  margin-top: 20px;
+  display: none;
+  a {
+    color: $white;
+    display: block;
+    margin-top: 10px;
   }
 }
 
@@ -27,10 +41,28 @@ nav {
   }
 }
 
+.nav-burger {
+  display: none;
+  color: $white;
+  font-size: 25px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: $lite_grey 1px solid;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 @media(max-width: 768px) {
   nav {
     a {
       font-size: 18px;
     }
+  }
+  .nav-link {
+    display: none;
+  }
+  .nav-burger {
+    display: block;
   }
 }

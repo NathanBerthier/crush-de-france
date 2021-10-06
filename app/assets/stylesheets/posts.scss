@@ -40,6 +40,17 @@
   }
 }
 
+@media(max-width: 768px) {
+  .post-form {
+    input {
+      width: 95%;
+    }
+    textarea {
+      width: 95%;
+    }
+  }
+}
+
 .actions-post input {
   margin-top: 10px;
   width: 82%;
