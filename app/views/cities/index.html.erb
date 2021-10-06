@@ -14,6 +14,9 @@
       <% else %>
         <p>Vous gérez <%= @my_cities.count %> villes</p>
       <% end %>
+      <div class='mobile-message'>
+        <p>Ouvrez l'application sur votre ordinateur pour voir plus de paramètres</p>
+      </div>
       <%= link_to 'Créer une nouvelle ville', new_city_path, class: 'city-btn' %>
     </header>
     <% @my_cities.each do |city| %>
@@ -93,6 +96,16 @@
           <% end %>
         </div>
       </div>
+
+      <div class='<%= city.sub? ? "cities-mobile-card green" : "cities-mobile-card red" %>'>
+        <div class='card-info mobile-grid'>
+          <h2>Poste en attente: </h2>
+          <h3><%= city.num_post %></h3>
+          <% if city.sub? %>
+            <%= link_to 'Valider les postes', city_posts_path(city) %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
 
     <% @moderated_cities.each do |city| %>
@@ -129,6 +142,16 @@
             <%= link_to 'Voir', show_city_path(city.short_name.downcase) %>
           </div>
 
+        </div>
+      </div>
+
+      <div class='<%= city.sub? ? "cities-mobile-card green" : "cities-mobile-card red" %>'>
+        <div class='card-info'>
+          <h2>Nombre de poste en attente: </h2>
+          <h3><%= city.num_post %></h3>
+          <% if city.sub? %>
+            <%= link_to 'Valider les postes', city_posts_path(city) %>
+          <% end %>
         </div>
       </div>
     <% end %>

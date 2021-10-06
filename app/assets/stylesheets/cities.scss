@@ -18,11 +18,11 @@
 }
 
 .red {
-  outline: 2px $red solid;
+  border: 2px $red solid;
 }
 
 .green {
-  outline: 2px green solid;
+  border: 2px green solid;
 }
 
 .short-name {
@@ -118,4 +118,53 @@
 
 .moula {
   text-align: center;
+}
+
+.cities-mobile-card {
+  display: none;
+  background: $grey_blue;
+  border-radius: 8px;
+  margin: 0px auto;
+  margin-bottom: 30px;
+  padding: 15px;
+  position: relative;
+  .card-info {
+    h2 {
+      font-size: 15px;
+      align-self: center;
+      text-align: center;
+      color: $white;
+    }
+    h3 {
+      align-self: center;
+      text-align: center;
+      color: $white;
+    }
+    a {
+      align-self: center;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  .mobile-grid {
+    display: grid;
+    grid-template-columns: 50% 1fr 40%;
+  }
+}
+
+.mobile-message {
+  display: none;
+  margin-bottom: 30px;
+}
+
+@media(max-width: 768px) {
+  .cities-card {
+    display: none;
+  }
+  .cities-mobile-card {
+    display: block;
+  }
+  .mobile-message {
+    display: block;
+  }
 }
