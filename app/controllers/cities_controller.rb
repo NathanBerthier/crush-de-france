@@ -17,7 +17,7 @@ class CitiesController < ApplicationController
 
   def create # rubocop:disable Metrics/MethodLength
     data = city_params
-    time = Time.parse("#{data[:upload_time]}:00")
+    time = data[:upload_time]
     @city = City.new(
       name: data[:name].downcase,
       short_name: data[:short_name].downcase,
@@ -41,7 +41,7 @@ class CitiesController < ApplicationController
   def update # rubocop:disable Metrics/MethodLength
     @city = City.find(params[:id])
     data = city_params
-    time = Time.parse("#{data[:upload_time]}:00")
+    time = data[:upload_time]
     @city.update(
       name: data[:name].downcase,
       short_name: data[:short_name].downcase,
