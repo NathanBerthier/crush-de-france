@@ -16,3 +16,11 @@
     opacity: 20%;
   }
 }
+
+@media(max-width: 768px) {
+  .home-content {
+    h2 {
+      font-size: 36px;
+    }
+  }
+}
